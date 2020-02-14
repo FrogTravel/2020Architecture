@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         (application as BaseApp).appComponent.inject(this)
         super.onCreate(savedInstanceState)
 
-//        val model : MainViewModel by viewModels() smart way
         val model: MainViewModel = ViewModelProvider(this, viewModelFactory).get(
             MainViewModel::class.java
         )

@@ -11,11 +11,10 @@ import dagger.Provides
 @Module
 class ViewModelModule {
     @Provides
-    fun getViewModelFactory(repository: Repository, jokeDAO: JokeDAO) : ViewModelProvider.Factory = object : ViewModelProvider.Factory{
+    fun getViewModelFactory(repository: Repository) : ViewModelProvider.Factory = object : ViewModelProvider.Factory{
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return MainViewModel(repository, jokeDAO) as T
+            return MainViewModel(repository) as T
         }
 
     }
-
 }

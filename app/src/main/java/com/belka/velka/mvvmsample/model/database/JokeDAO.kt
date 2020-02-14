@@ -12,6 +12,9 @@ interface JokeDAO {
     @Insert(onConflict = REPLACE)
     fun save(joke: Joke)
 
+    @Insert(onConflict = REPLACE)
+    fun saveAll(jokes: List<Joke>)
+
     @Query("SELECT * FROM joke")
-    fun loadAll(): LiveData<Joke>
+    fun loadAll(): LiveData<List<Joke>>
 }
