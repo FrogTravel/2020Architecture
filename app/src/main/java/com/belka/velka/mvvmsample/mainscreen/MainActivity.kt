@@ -12,6 +12,7 @@ import com.belka.velka.mvvmsample.R
 import com.belka.velka.mvvmsample.model.Joke
 import com.belka.velka.mvvmsample.model.Repository
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.joke_card.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

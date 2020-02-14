@@ -1,5 +1,7 @@
 package com.belka.velka.mvvmsample.mainscreen
 
+import android.os.Build
+import android.text.Html
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +18,13 @@ class JokeAdapter(val jokes: List<Joke>) : RecyclerView.Adapter<JokeAdapter.View
     override fun getItemCount() = jokes.size
 
     override fun onBindViewHolder(viewHolder: ViewHolder, id: Int) {
-        viewHolder.view.textView.text = jokes[id].elementPureHtml
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            viewHolder.view.textView.text = Html.fromHtml(jokes[id].elementPureHtml, Html.FROM_HTML_MODE_COMPACT)
+        }else{
+            viewHolder.view.textView.text = Html.fromHtml(jokes[id].elementPureHtml)
+        }
+
+        viewHolder.view.textViewName.text = jokes[id].name.capitalize()
     }
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
