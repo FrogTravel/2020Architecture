@@ -1,4 +1,4 @@
-# 2020Architecture
+# MVVM Architecture
 - MVVM 
 - Dagger 2
 - Retrofit 2
